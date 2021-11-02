@@ -1,0 +1,50 @@
+{
+	"x-enabled": {
+		"enabled": true
+	},
+	"swagger": "2.0",
+	"info": {
+		"description": "Post functions",
+		"version": "1.0.0",
+		"title": "Post API"
+	},
+	"paths": {
+		"/post": {
+			"get": {
+				"x-flow": "PostFlow",
+				"description": "",
+				"operationId": "Post",
+				"parameters": [
+					{
+						"description": "The username",
+						"in": "query",
+						"name": "username",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "greeting",
+						"schema": {
+							"$ref": "schema:///schema/axway-first-project/greeting"
+						}
+					},
+					"400": {
+						"description": "bad request",
+						"schema": {
+							"$ref": "schema:///schema/axway-first-project/error"
+						}
+					}
+				},
+				"summary": "Greet a user",
+				"tags": [
+					"helloworld"
+				]
+			}
+		}
+	}
+}
